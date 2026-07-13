@@ -347,7 +347,6 @@ main(void)
 {
     struct node *tree = NULL;
 
-    /* Approach 1: Operation arrays - clean and type-safe */
     operation ops[] = {
         INSERT(50), INSERT(30), INSERT(70), INSERT(20), INSERT(40),
         INSERT(60), INSERT(80), INSERT(15), INSERT(25), INSERT(35),
@@ -367,7 +366,6 @@ main(void)
     run_operations(&tree, ops, sizeof(ops)/sizeof(ops[0]));
     free_tree(tree);
 
-    /* Approach 2: String commands - even lazier */
     printf("\n--- Using string commands ---\n\n");
     tree = NULL;
     
@@ -383,7 +381,6 @@ main(void)
     run_commands(&tree, commands, sizeof(commands)/sizeof(commands[0]));
     free_tree(tree);
 
-    /* Approach 3: The absolute laziest - batch from arrays */
     printf("\n--- Batch operations from raw data ---\n\n");
     tree = NULL;
     
